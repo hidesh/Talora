@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="da">
+  <body style="margin:0;background:#f6f4ef;color:#0e1f38;font-family:Arial,sans-serif">
+    <div style="max-width:560px;margin:40px auto;padding:32px;border-radius:16px;background:#ffffff">
+      <p style="margin:0 0 24px;color:#b9915c;font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase">Talora administration</p>
+      <h1 style="margin:0 0 16px;font-family:Georgia,serif;font-size:32px;font-weight:400">Nulstil din adgangskode</h1>
+      <p style="margin:0 0 24px;line-height:1.7">Der er anmodet om en ny adgangskode til din Talora-bruger. Linket er midlertidigt og kan kun bruges én gang.</p>
+      <p style="margin:0 0 28px"><a href="{{ .SiteURL }}/auth/recovery?token_hash={{ .TokenHash }}&type=recovery" style="display:inline-block;padding:14px 20px;border-radius:10px;background:#0e1f38;color:#ffffff;text-decoration:none;font-weight:700">Vælg ny adgangskode</a></p>
+      <p style="margin:0;color:#687384;font-size:13px;line-height:1.6">Hvis du ikke forventede denne mail, kan du ignorere den. Din nuværende adgangskode ændres ikke.</p>
+    </div>
+  </body>
+</html>
