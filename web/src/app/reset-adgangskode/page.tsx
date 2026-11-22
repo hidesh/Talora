@@ -11,10 +11,16 @@ export const dynamic = "force-dynamic";
 
 export default async function ResetPasswordPage() {
   const cookieStore = await cookies();
-  if (cookieStore.get("talora_recovery")?.value !== "active") redirect("/login?error=recovery-link");
+  if (cookieStore.get("talora_recovery")?.value !== "active") {
+    console.warn("Recovery password page failed: recovery marker missing");
+    redirect("/login?error=recovery-link");
+  }
   const client = await createSupabaseServerClient();
   const { data, error } = client ? await client.auth.getUser() : { data: { user: null }, error: new Error("setup") };
-  if (error || !data.user) redirect("/login?error=recovery-link");
+  if (error || !data.user) {
+    console.warn("Recovery password page failed: auth session unavailable");
+    redirect("/login?error=recovery-link");
+  }
 
   return <main id="main-content" className="login-page"><section className="login-brand-panel"><Logo whiteBackground /><div><p className="eyebrow light">Talora administration</p><h2>Vælg en ny adgangskode.</h2><p>Brug en unik adgangskode, som ikke anvendes på andre tjenester.</p></div><Link href="/login">← Afbryd og gå til login</Link></section><section className="login-form-panel"><ResetPasswordForm /></section></main>;
 }
