@@ -5,7 +5,7 @@ import { createSupabaseServerClient } from "@/lib/supabase/server";
 export async function POST(request: NextRequest) {
   const origin = request.headers.get("origin");
   if (!origin || origin !== request.nextUrl.origin) {
-    console.warn("Recovery confirmation failed: origin mismatch");
+    console.warn("Recovery confirmation failed: origin mismatch", { kind: !origin ? "missing" : origin === "null" ? "null" : "other" });
     return NextResponse.redirect(new URL("/login?error=recovery-link", request.url), 303);
   }
   const formData = await request.formData();
