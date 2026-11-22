@@ -6,8 +6,10 @@ import { useEffect, useState } from "react";
 import { Logo } from "@/components/logo";
 
 const links = [
+  { href: "/om-talora", label: "Om Talora" },
   { href: "/saadan-arbejder-vi", label: "Sådan arbejder vi" },
   { href: "/samarbejdspartnere", label: "Samarbejdspartnere" },
+  { href: "/karriere", label: "Karriere" },
 ];
 
 export function Header() {

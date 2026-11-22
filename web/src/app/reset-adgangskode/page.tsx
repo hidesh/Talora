@@ -16,5 +16,5 @@ export default async function ResetPasswordPage() {
   const { data, error } = client ? await client.auth.getUser() : { data: { user: null }, error: new Error("setup") };
   if (error || !data.user) redirect("/login?error=recovery-link");
 
-  return <main id="main-content" className="login-page"><section className="login-brand-panel"><Logo /><div><p className="eyebrow light">Talora administration</p><h2>Vælg en ny adgangskode.</h2><p>Brug en unik adgangskode, som ikke anvendes på andre tjenester.</p></div><Link href="/login">← Afbryd og gå til login</Link></section><section className="login-form-panel"><ResetPasswordForm /></section></main>;
+  return <main id="main-content" className="login-page"><section className="login-brand-panel"><Logo whiteBackground /><div><p className="eyebrow light">Talora administration</p><h2>Vælg en ny adgangskode.</h2><p>Brug en unik adgangskode, som ikke anvendes på andre tjenester.</p></div><Link href="/login">← Afbryd og gå til login</Link></section><section className="login-form-panel"><ResetPasswordForm /></section></main>;
 }

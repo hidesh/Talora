@@ -30,7 +30,11 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
   images: { formats: ["image/avif", "image/webp"] },
-  async headers() { return [{ source: "/:path*", headers: securityHeaders }]; },
+  async headers() { return [
+    { source: "/:path*", headers: securityHeaders },
+    { source: "/auth/recovery", headers: [{ key: "Referrer-Policy", value: "no-referrer" }, { key: "Cache-Control", value: "no-store" }] },
+    { source: "/reset-adgangskode", headers: [{ key: "Cache-Control", value: "no-store" }] },
+  ]; },
 };
 
 export default nextConfig;

@@ -1,4 +1,5 @@
 import { Bot, Fingerprint, ShieldCheck, TimerReset } from "lucide-react";
+import { formatAdminDate } from "@/lib/format-admin-date";
 import type { SecurityEvent, SecurityEventType, SecurityOverview as SecurityOverviewData } from "@/lib/security-events";
 
 const labels: Record<SecurityEventType, string> = {
@@ -11,14 +12,6 @@ const labels: Record<SecurityEventType, string> = {
   rate_limited: "For mange forsøg",
 };
 
-function formatDate(value: string) {
-  return new Intl.DateTimeFormat("da-DK", {
-    dateStyle: "short",
-    timeStyle: "short",
-    timeZone: "Europe/Copenhagen",
-  }).format(new Date(value));
-}
-
 function EventRow({ event }: { event: SecurityEvent }) {
   return (
     <tr>
@@ -26,7 +19,7 @@ function EventRow({ event }: { event: SecurityEvent }) {
       <td>{labels[event.event_type]}</td>
       <td><code>{event.visitor_hash.slice(0, 10)}</code></td>
       <td>{event.attempts}</td>
-      <td>{formatDate(event.last_seen)}</td>
+      <td>{formatAdminDate(event.last_seen, "short")}</td>
     </tr>
   );
 }

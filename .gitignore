@@ -2,6 +2,7 @@
 web/.next/
 web/node_modules/
 **/.env*
+*.sql
 **/scripts/
 **/AGENTS.md
 **/CLAUDE.md

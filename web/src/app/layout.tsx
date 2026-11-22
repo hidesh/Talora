@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
   openGraph: { type: "website", locale: "da_DK", siteName: "Talora", title: "Talora | Salgspartner for virksomheder", description: "Vi tager dialogen med jeres potentielle kunder og følger salget i mål.", url: "/" },
   twitter: { card: "summary", title: "Talora | Salgspartner for virksomheder", description: "Vi tager dialogen med jeres potentielle kunder og følger salget i mål." },
-  icons: { icon: "/icon.svg" },
+  icons: { icon: "/talora-icon.png" },
 };
 
 export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#0E1F38" };

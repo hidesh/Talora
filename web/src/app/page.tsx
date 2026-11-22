@@ -17,6 +17,13 @@ export default function Home() {
     "@type": "ProfessionalService",
     name: "Talora",
     url: "https://talora.dk",
+    telephone: "+45 22 20 70 89",
+    email: "info@talora.dk",
+    address: { "@type": "PostalAddress", streetAddress: "Søtorvet 5, 2. sal", postalCode: "1371", addressLocality: "København K", addressCountry: "DK" },
+    openingHoursSpecification: [
+      { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday"], opens: "09:00", closes: "17:00" },
+      { "@type": "OpeningHoursSpecification", dayOfWeek: "Friday", opens: "09:00", closes: "16:00" },
+    ],
     description: "Talora følger op på kundehenvendelser og lukker salg på vegne af danske virksomheder.",
     areaServed: "DK",
   };
@@ -56,6 +63,7 @@ export default function Home() {
           </div>
         </section>
         <PartnerCarousel />
+        <section className="home-story section-shell" aria-labelledby="home-story-title"><div><p className="eyebrow">Om Talora</p><h2 id="home-story-title">Stærke resultater starter med den rigtige samtale.</h2></div><div><p>Vi skaber stærkere kunderelationer gennem professionel kundekontakt, leadhåndtering og resultatorienteret salg.</p><Link className="text-link" href="/om-talora">Lær Talora at kende <ArrowRight aria-hidden="true" size={17} /></Link></div></section>
         <section className="cta-section section-shell" aria-labelledby="cta-title">
           <div><p className="eyebrow light">Klar til flere lukkede salg?</p><h2 id="cta-title">Lad os tage en snak om jeres leads og muligheder.</h2></div>
           <Link className="button button-bronze" href="/book-moede">Book et møde <ArrowRight aria-hidden="true" size={18} /></Link>
